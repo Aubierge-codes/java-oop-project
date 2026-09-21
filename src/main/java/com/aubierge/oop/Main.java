@@ -1,5 +1,6 @@
 package com.aubierge.oop;
 
+import com.aubierge.oop.model.Community;
 import com.aubierge.oop.model.CommunityMember;
 import com.aubierge.oop.model.MemberStatus;
 import com.aubierge.oop.model.Student;
@@ -9,6 +10,8 @@ import com.aubierge.oop.model.Volunteer;
 public class Main {
 
     public static void main(String[] args) {
+
+        Community community = new Community();
 
         CommunityMember student = new Student(
                 "Flora",
@@ -22,28 +25,21 @@ public class Main {
                 "Java"
         );
 
-        student.displayMemberType();
-        student.introduce();
-        student.performRole();
+        community.addMember(student);
+        community.addMember(teacher);
 
-        System.out.println();
-
-        teacher.displayMemberType();
-        teacher.introduce();
-        teacher.performRole();
-
-        System.out.println();
+        student.setStatus(MemberStatus.ACTIVE);
 
         Volunteer studentVolunteer = new Student(
-                "Flora",
-                17,
-                "STU001"
+                "Aubierge",
+                16,
+                "STU002"
         );
 
         Volunteer teacherVolunteer = new Teacher(
-                "Mr. Eric",
-                35,
-                "Java"
+                "Mrs. Alice",
+                32,
+                "Mathematics"
         );
 
         studentVolunteer.volunteer();
@@ -51,11 +47,12 @@ public class Main {
 
         System.out.println();
 
-        student.setStatus(MemberStatus.GRADUATED);
+        community.displayMembers();
+
+        System.out.println();
 
         System.out.println(
-                "Updated student status: "
-                        + student.getStatus()
+                "Total members: " + community.getMemberCount()
         );
     }
 }
