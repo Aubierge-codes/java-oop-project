@@ -1,6 +1,7 @@
 package com.aubierge.oop;
 
 import com.aubierge.oop.model.CommunityMember;
+import com.aubierge.oop.model.MemberStatus;
 import com.aubierge.oop.model.Student;
 import com.aubierge.oop.model.Teacher;
 import com.aubierge.oop.model.Volunteer;
@@ -47,5 +48,14 @@ public class Main {
 
         studentVolunteer.volunteer();
         teacherVolunteer.volunteer();
+
+        System.out.println();
+
+        student.setStatus(MemberStatus.GRADUATED);
+
+        System.out.println(
+                "Updated student status: "
+                        + student.getStatus()
+        );
     }
 }
