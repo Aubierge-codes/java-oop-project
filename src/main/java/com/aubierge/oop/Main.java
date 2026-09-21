@@ -10,24 +10,20 @@ public class Main {
 
         Person person = new Person("Aubierge", 16);
 
-        Student student = new Student(
+        Person student = new Student(
                 "Flora",
                 17,
                 "STU001"
         );
 
-        Teacher teacher = new Teacher(
+        Person teacher = new Teacher(
                 "Mr. Eric",
                 35,
                 "Java"
         );
 
         person.introduce();
-
         student.introduce();
-        student.study();
-
         teacher.introduce();
-        teacher.teach();
     }
 }

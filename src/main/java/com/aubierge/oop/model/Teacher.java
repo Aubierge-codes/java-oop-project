@@ -18,4 +18,13 @@ public class Teacher extends Person {
                 getName() + " is teaching " + subject + "."
         );
     }
+
+    @Override
+    public void introduce() {
+        System.out.println(
+                "Hello, I am " + getName()
+                        + ", a teacher of " + subject
+                        + "."
+        );
+    }
 }
