@@ -1,8 +1,13 @@
 package com.aubierge.oop;
 
+import com.aubierge.oop.model.Person;
+
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println("Java OOP Project Started");
+
+        Person person = new Person("Aubierge", 16);
+
+        person.introduce();
     }
 }
