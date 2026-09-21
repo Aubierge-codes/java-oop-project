@@ -33,8 +33,17 @@ public class Main {
 
         System.out.println();
 
-        Volunteer studentVolunteer = (Volunteer) student;
-        Volunteer teacherVolunteer = (Volunteer) teacher;
+        Volunteer studentVolunteer = new Student(
+                "Flora",
+                17,
+                "STU001"
+        );
+
+        Volunteer teacherVolunteer = new Teacher(
+                "Mr. Eric",
+                35,
+                "Java"
+        );
 
         studentVolunteer.volunteer();
         teacherVolunteer.volunteer();
