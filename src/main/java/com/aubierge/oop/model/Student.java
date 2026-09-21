@@ -1,6 +1,6 @@
 package com.aubierge.oop.model;
 
-public class Student extends CommunityMember {
+public class Student extends CommunityMember implements Volunteer {
 
     private String studentId;
 
@@ -29,5 +29,12 @@ public class Student extends CommunityMember {
     @Override
     public void performRole() {
         study();
+    }
+
+    @Override
+    public void volunteer() {
+        System.out.println(
+                getName() + " is volunteering in the community."
+        );
     }
 }
