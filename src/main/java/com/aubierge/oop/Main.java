@@ -6,6 +6,7 @@ import com.aubierge.oop.model.MemberStatus;
 import com.aubierge.oop.model.Student;
 import com.aubierge.oop.model.Teacher;
 import com.aubierge.oop.model.Volunteer;
+import java.util.List;
 
 public class Main {
 
@@ -25,15 +26,24 @@ public class Main {
                 "Java"
         );
 
-        community.addMember(student);
-        community.addMember(teacher);
-
-        student.setStatus(MemberStatus.ACTIVE);
-
-        Volunteer studentVolunteer = new Student(
+        CommunityMember secondStudent = new Student(
                 "Aubierge",
                 16,
                 "STU002"
+        );
+
+        community.addMember(student);
+        community.addMember(teacher);
+        community.addMember(secondStudent);
+
+        student.setStatus(MemberStatus.ACTIVE);
+        teacher.setStatus(MemberStatus.ACTIVE);
+        secondStudent.setStatus(MemberStatus.GRADUATED);
+
+        Volunteer studentVolunteer = new Student(
+                "Claire",
+                17,
+                "STU003"
         );
 
         Volunteer teacherVolunteer = new Teacher(
@@ -54,5 +64,16 @@ public class Main {
         System.out.println(
                 "Total members: " + community.getMemberCount()
         );
+
+        System.out.println();
+
+        List<CommunityMember> graduatedMembers =
+                community.findMembersByStatus(MemberStatus.GRADUATED);
+
+        System.out.println("Graduated Members:");
+
+        for (CommunityMember member : graduatedMembers) {
+            member.displayMemberType();
+        }
     }
 }

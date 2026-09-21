@@ -23,6 +23,26 @@ public class Community {
         return members.size();
     }
 
+    public List<CommunityMember> getMembers() {
+        return new ArrayList<>(members);
+    }
+
+    public List<CommunityMember> findMembersByStatus(MemberStatus status) {
+        if (status == null) {
+            throw new IllegalArgumentException("Status cannot be null.");
+        }
+
+        List<CommunityMember> matchingMembers = new ArrayList<>();
+
+        for (CommunityMember member : members) {
+            if (member.getStatus() == status) {
+                matchingMembers.add(member);
+            }
+        }
+
+        return matchingMembers;
+    }
+
     public void displayMembers() {
         System.out.println("Community Members:");
 
