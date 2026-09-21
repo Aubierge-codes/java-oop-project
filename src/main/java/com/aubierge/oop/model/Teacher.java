@@ -1,6 +1,6 @@
 package com.aubierge.oop.model;
 
-public class Teacher extends Person {
+public class Teacher extends CommunityMember {
 
     private String subject;
 
@@ -26,5 +26,10 @@ public class Teacher extends Person {
                         + ", a teacher of " + subject
                         + "."
         );
+    }
+
+    @Override
+    public void performRole() {
+        teach();
     }
 }
