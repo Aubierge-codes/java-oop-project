@@ -3,6 +3,7 @@ package com.aubierge.oop;
 import com.aubierge.oop.model.CommunityMember;
 import com.aubierge.oop.model.Student;
 import com.aubierge.oop.model.Teacher;
+import com.aubierge.oop.model.Volunteer;
 
 public class Main {
 
@@ -29,5 +30,13 @@ public class Main {
         teacher.displayMemberType();
         teacher.introduce();
         teacher.performRole();
+
+        System.out.println();
+
+        Volunteer studentVolunteer = (Volunteer) student;
+        Volunteer teacherVolunteer = (Volunteer) teacher;
+
+        studentVolunteer.volunteer();
+        teacherVolunteer.volunteer();
     }
 }
